@@ -1,12 +1,12 @@
 committee:
   - role: General Chair
     name: Andrew McCallum
-    aff: University of Massachusetts, Amherst
+    aff: UMass Amherst
     im: /static/images/amccallum.jpg
     tw: andrewmccallum
   - role: General Chair
     name: Sameer Singh
-    aff: University of California, Irvine
+    aff: UC Irvine
     tw: sameer_
     im: /static/images/sameer.jpg
   - role: Program Chair
@@ -16,12 +16,12 @@ committee:
     tw: dipanjand
   - role: Program Chair
     name: Hannaneh Hajishirzi
-    aff: University of Washington
+    aff: Univ of Washington
     tw: HannaHajishirzi
     im: /static/images/hannaneh.jpg
   - role: Workshop Chair
     name: Zachary G. Ives
-    aff: University of Pennsylvania
+    aff: Univ of Pennsylvania
     im: /static/images/zachives.jpg
   - role: Workshop Chair
     name: Amanda Stent

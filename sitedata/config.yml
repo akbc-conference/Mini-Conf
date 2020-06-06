@@ -4,16 +4,16 @@ date: June 22-25 2020
 proceedings_title: Proceedings of the Second AKBC Conference
 analytics: UA-
 logo:
-  image: static/images/MiniConf.png
-  width: 180px
+  image: https://akbc.ws/2020/assets/img/logo_notext.png
+  width: 50px
   height: auto
 # uncomment the following line to show the site title next to the logo image
-# site_title: MiniConf
+site_title: AKBC 2020
 page_title:
   prefix: "AKBC 2020"
   separator: ": "
 background_image: static/images/main.jpg
-organization: Organization Committee
+organization: AKBCOrganization Committee
 
 # Remove or change to your chat server.
 chat_server: 35.232.236.127:3000
