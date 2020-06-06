@@ -1,0 +1,36 @@
+[
+  {
+    "sessionId": "opening",
+    "title": "Opening Remarks",
+    "start": "2020-06-22T08:00:00-07:00",
+    "end": "2020-06-22T08:20:00-07:00",
+    "calendarId": "---"
+  },
+  {
+    "sessionId": "wcohen",
+    "start": "2020-06-22T08:20:00-07:00",
+    "end": "2020-06-22T08:55:00-07:00",
+    "calendarId": "invited"
+  },
+  {
+    "sessionId": "jleskovec",
+    "start": "2020-06-22T08:55:00-07:00",
+    "end": "2020-06-22T09:30:00-07:00",
+    "calendarId": "invited"
+  },
+  {
+    "sessionId": "d1talks",
+    "title": "Day 1 Lightning Talks",
+    "start": "2020-06-22T09:30:00-07:00",
+    "end": "2020-06-22T10:20:00-07:00",
+    "link": "/papers.html?session=d1poster",
+    "calendarId": "talks"
+  },
+  {
+    "sessionId": "d1posters",
+    "title": "Day 1 Poster Session",
+    "start": "2020-06-22T10:20:00-07:00",
+    "end": "2020-06-22T11:20:00-07:00",
+    "calendarId": "poster"
+  }
+]

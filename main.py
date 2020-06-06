@@ -13,6 +13,41 @@ from flaskext.markdown import Markdown
 site_data = {}
 by_uid = {}
 
+# since sessions provide a mapping, create main_calendar event
+def expand_sessions():
+    global site_data, by_uid
+    events = []
+    for session in site_data['sessions']:
+        # get title
+        title = ""
+        if "title" in session.keys():
+          title = session['title']
+        else:
+          assert session['calendarId'] == "invited"
+          # get the speaker details
+          speaker = by_uid['speakers'][session['sessionId']]
+          title = "Invited: " + speaker['speaker']
+        # get the url
+        url = None
+        if "link" in session.keys():
+            url = session['link']
+        else:
+            if session['calendarId'] == "invited":
+                url = "/speaker_" + session['sessionId'] + ".html"
+            if session['calendarId'] == "poster":
+                url = "/papers.html?session=" + session['sessionId']
+        json_event = {
+            "title": title,
+            "start": session['start'],
+            "end": session['end'],
+            "location": url,
+            "link": url,
+            "category": "time",
+            "calendarId": session['calendarId'],
+        }
+        events.append(json_event)
+    site_data['main_calendar'] = events
+
 
 def main(site_data_path):
     global site_data, extra_files
@@ -32,6 +67,8 @@ def main(site_data_path):
         by_uid[typ] = {}
         for p in site_data[typ]:
             by_uid[typ][p["UID"]] = p
+    
+    expand_sessions()
 
     print("Data Successfully Loaded")
     return extra_files
