@@ -2,34 +2,34 @@ committee:
   - role: General Chair
     name: Andrew McCallum
     aff: UMass Amherst
-    im: /static/images/amccallum.jpg
+    im: https://www.akbc.ws/Mini-Conf/static/images/amccallum.jpg
     tw: andrewmccallum
   - role: General Chair
     name: Sameer Singh
     aff: UC Irvine
     tw: sameer_
-    im: /static/images/sameer.jpg
+    im: https://www.akbc.ws/Mini-Conf/static/images/sameer.jpg
   - role: Program Chair
     name: Dipanjan Das
     aff: Google
-    im: /static/images/dipanjan.jpg
+    im: https://www.akbc.ws/Mini-Conf/static/images/dipanjan.jpg
     tw: dipanjand
   - role: Program Chair
     name: Hannaneh Hajishirzi
     aff: Univ of Washington
     tw: HannaHajishirzi
-    im: /static/images/hannaneh.jpg
+    im: https://www.akbc.ws/Mini-Conf/static/images/hannaneh.jpg
   - role: Workshop Chair
     name: Zachary G. Ives
     aff: Univ of Pennsylvania
-    im: /static/images/zachives.jpg
+    im: https://www.akbc.ws/Mini-Conf/static/images/zachives.jpg
   - role: Workshop Chair
     name: Amanda Stent
     aff: Bloomberg
     tw: astent
-    im: /static/images/astent.jpg
+    im: https://www.akbc.ws/Mini-Conf/static/images/astent.jpg
   - role: Local Chair
     name: Matt Gardner
     aff: Allen Institute of AI
     tw: nlpmattg
-    im: /static/images/mattg.jpg
+    im: https://www.akbc.ws/Mini-Conf/static/images/mattg.jpg
