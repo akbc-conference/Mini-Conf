@@ -17,35 +17,43 @@ by_uid = {}
 def expand_sessions():
     global site_data, by_uid
     events = []
-    for session in site_data['sessions']:
-        # get title
-        title = ""
-        if "title" in session.keys():
-          title = session['title']
-        else:
-          assert session['calendarId'] == "invited"
-          # get the speaker details
-          speaker = by_uid['speakers'][session['sessionId']]
-          title = "Invited: " + speaker['speaker']
-        # get the url
-        url = None
-        if "link" in session.keys():
-            url = session['link']
-        else:
-            if session['calendarId'] == "invited":
-                url = "/speaker_" + session['sessionId'] + ".html"
-            if session['calendarId'] == "poster":
-                url = "/papers.html?session=" + session['sessionId']
-        json_event = {
-            "title": title,
-            "start": session['start'],
-            "end": session['end'],
-            "location": url,
-            "link": url,
-            "category": "time",
-            "calendarId": session['calendarId'],
-        }
-        events.append(json_event)
+    for day in site_data['sessions']:
+        date = day['date']
+        day['speakers'] = []
+        day['highlighted'] = []
+        for session in day['sessions']:
+            # get title
+            title = ""
+            if "title" in session.keys():
+                title = session['title']
+            else:
+                assert session['calendarId'] == "invited"
+                # get the speaker details
+                speaker = by_uid['speakers'][session['sessionId']]
+                title = "Invited: " + speaker['speaker']
+                day['speakers'].append(by_uid['speakers'][session['sessionId']])
+            # get the url
+            url = None
+            if "link" in session.keys():
+                url = session['link']
+            else:
+                if session['calendarId'] == "invited":
+                    url = "/speaker_" + session['sessionId'] + ".html"
+                if session['calendarId'] == "poster":
+                    url = "/papers.html?session=" + session['sessionId']
+                    for paper in site_data['papers']:
+                        if session['sessionId'] in paper['session']:
+                            day['highlighted'].append(format_paper(by_uid["papers"][paper['UID']]))
+            json_event = {
+                "title": title,
+                "start": date + "T" + session['start'] + ":00-07:00",
+                "end": date + "T" + session['end'] + ":00-07:00",
+                "location": url,
+                "link": url,
+                "category": "time",
+                "calendarId": session['calendarId'],
+            }
+            events.append(json_event)
     site_data['main_calendar'] = events
 
 
@@ -129,12 +137,7 @@ def paperVis():
 @app.route("/calendar.html")
 def schedule():
     data = _data()
-    data["day"] = {
-        "speakers": site_data["speakers"],
-        "highlighted": [
-            format_paper(by_uid["papers"][h["UID"]]) for h in site_data["highlighted"]
-        ],
-    }
+    data['sessions'] = site_data["sessions"]
     return render_template("schedule.html", **data)
 
 
