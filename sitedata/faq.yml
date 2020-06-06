@@ -1,5 +1,18 @@
 FAQ:
-  - Section: Conference Advice
+  - Section: Papers
     QA:
-      - Question: What should I put on the paper pages?
-        Answer: "Depending on your conference, you might want to consider having embeded videos, chat rooms, or rendered posters. For ICLR, we used SlidesLive and Rocket.Chat. In another conference we used PDF.js to render posters."
+      - Question: When will the paper videos be available?
+        Answer: Yes,  video has a 5-minute summary, that will be made available a little before the conference, but will also be streamed during the lightning talk sessions.
+      - Question: How can I interact with the authors?
+        Answer: Each paper is associated with a \"poster\" session, during which the authors will be available for live video chat. Each paper also has a dedicated chat. Both of these are available from each paper's page.
+
+  - Section: Invited Talks
+    QA:
+      - Question: Will the videos be available later?
+        Answer: Yes, we will be recording the talks, and will release the videos after the conference.
+
+  - Section: Workshops
+    QA:
+      - Question: Will the workshops have the same format as the main conference?
+        Answer: No, we have left the format for the workshops to the organizers. However, there will be a chat associated with each workshop.
+
