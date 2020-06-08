@@ -21,6 +21,11 @@
     var win_height;
     var frm_height;
     var oFrame = $("#frame");
+    var room = getUrlParameter("room")
+    console.log(room)
+    if (room === "") {
+      room = "general"
+    }
     console.log(oFrame);
     // Get page height Firefox/IE
     if (window.innerHeight) win_height = window.innerHeight;
@@ -35,7 +40,7 @@
 
     oFrame.attr(
       "src",
-      "http://{{config.chat_server}}/" + getUrlParameter("room")
+      "http://{{config.chat_server}}/" + room + "?layout=embedded"
     );
   });
 </script>
